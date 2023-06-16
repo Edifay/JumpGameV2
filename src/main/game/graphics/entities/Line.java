@@ -2,6 +2,7 @@ package main.game.graphics.entities;
 
 
 import main.game.calculus.Point;
+import main.game.graphics.DrawComponent;
 
 import java.awt.*;
 

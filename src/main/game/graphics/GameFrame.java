@@ -1,28 +1,22 @@
 package main.game.graphics;
 
+import main.game.logic.Listener;
+
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
 
 public class GameFrame {
 
     public static JFrame gameFrame = new JFrame();
     public static Render render = new Render();
 
-    protected static Listener listener = new Listener();
-
     protected static Thread graphicsThread;
 
     public static void initGameFrame() {
-        gameFrame.setSize(1280, 720);
+        gameFrame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        gameFrame.setUndecorated(true);
 
         gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         gameFrame.setLocationRelativeTo(null);
-
-        render.addMouseListener(listener);
-        gameFrame.addKeyListener(listener);
-        render.addMouseMotionListener(listener);
 
         gameFrame.setContentPane(render);
 

@@ -1,4 +1,4 @@
-package main.game.graphics.entities;
+package main.game.graphics;
 
 import main.game.logic.Vector;
 

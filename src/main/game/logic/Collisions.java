@@ -22,7 +22,7 @@ public class Collisions {
         runOnLogicThread.add(() -> {
             //  Game.components.add(ball_test);
             //  Game.components.add(rect);
-            Game.components.add(line);
+            //  Game.components.add(line);
         });
     }
 

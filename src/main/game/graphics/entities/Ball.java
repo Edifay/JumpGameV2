@@ -2,6 +2,7 @@ package main.game.graphics.entities;
 
 
 import main.game.calculus.Point;
+import main.game.graphics.DrawComponent;
 import main.game.logic.Vector;
 
 import java.awt.*;
@@ -19,9 +20,8 @@ public class Ball extends DrawComponent {
         this.radius = radius;
     }
 
-
     @Override
     public void draw(Graphics2D g) {
-        g.fillOval(Math.round(this.point.x-radius), Math.round(this.point.y-radius), Math.round(2*radius), Math.round(2*radius));
+        g.fillOval(Math.round(this.point.x - radius), Math.round(this.point.y - radius), Math.round(2 * radius), Math.round(2 * radius));
     }
 }

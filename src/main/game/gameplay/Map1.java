@@ -10,7 +10,7 @@ public class Map1 extends Map {
 
     @Override
     public void setupMap() {
-        rect1 = new OrientedRectangle(new Point(150f, 300f), (float) -(Math.PI / 4), 600, 15f);
+        rect1 = new OrientedRectangle(new Point(150f, 300f), (float) -(Math.PI / 4), 1300, 15f);
         OrientedRectangle rect2 = new OrientedRectangle(new Point(0f, 300f), (float) 0, 150f, 15f);
         OrientedRectangle rect3 = new OrientedRectangle(new Point(0, GameFrame.render.getHeight()), (float) (Math.PI / 2), GameFrame.render.getHeight(), 2f);
         OrientedRectangle rect4 = new OrientedRectangle(new Point(GameFrame.render.getWidth(), GameFrame.render.getHeight()), (float) (Math.PI / 2), GameFrame.render.getHeight(), 2f);

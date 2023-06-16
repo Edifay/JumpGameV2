@@ -39,6 +39,10 @@ public class Vector {
         return new Vector(0, y);
     }
 
+    public Vector x() {
+        return new Vector(x, 0);
+    }
+
     public float angleWith(final Vector vect) {
         return (float) Math.atan2(y * vect.x - x * vect.y, x * vect.x + y * vect.y);
     }

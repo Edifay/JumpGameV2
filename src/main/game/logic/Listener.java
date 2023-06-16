@@ -1,4 +1,4 @@
-package main.game.graphics;
+package main.game.logic;
 
 import main.game.Game;
 import main.game.logic.MainLogic;
@@ -15,21 +15,35 @@ public class Listener implements KeyListener, MouseListener, MouseMotionListener
 
     @Override
     public void keyPressed(KeyEvent e) {
-        System.out.println("KeyCode : " + e.getKeyCode());
-        if (!Game.ball.appliedForce.contains(MainLogic.left) && e.getKeyCode() == 37)
+
+        if (e.getKeyCode() == 37 && !Game.ball.appliedForce.contains(MainLogic.left))
             Game.ball.appliedForce.add(MainLogic.left);
-        if (!Game.ball.appliedForce.contains(MainLogic.right) && e.getKeyCode() == 39)
+
+        if (e.getKeyCode() == 39 && !Game.ball.appliedForce.contains(MainLogic.right))
             Game.ball.appliedForce.add(MainLogic.right);
+
         if (e.getKeyCode() == 38)
-            Game.ball.velocity.y = -5f;
+            MainLogic.jump = true;
+
+        if (e.getKeyCode() == 32)
+            if (MainLogic.isRunning())
+                MainLogic.stopLogic();
+            else
+                MainLogic.startLogic();
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         if (e.getKeyCode() == 37)
             Game.ball.appliedForce.remove(MainLogic.left);
+
         if (e.getKeyCode() == 39)
             Game.ball.appliedForce.remove(MainLogic.right);
+
+        if (e.getKeyCode() == 38) {
+            MainLogic.jump = false;
+            MainLogic.alreadyJump = false;
+        }
     }
 
     @Override
